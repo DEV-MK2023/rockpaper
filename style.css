@@ -1,0 +1,240 @@
+/* Universal styles */
+* {
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("/a\ \(195\).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+/* --- DESKTOP / DEFAULT STYLES --- */
+h1 {
+    height: 50px;
+    font-size: 2rem;
+    color: white;
+    background-color: rgb(2, 2, 32);
+    line-height: 2.5rem;
+    padding: 10px 0;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    gap: 8rem;
+    flex-wrap: wrap;
+}
+
+img {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.05s ease-out, border-color 0.05s ease-out;
+    border: 4px solid transparent;
+    transform: translateZ(0);
+}
+
+img:hover {
+    border-color: blue;
+    cursor: pointer;
+    transform: scale(1.1) translateZ(0);
+}
+
+#playerDisplay,
+#computerDisplay {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 3rem;
+}
+
+.userscore,
+.compscore {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.userScore,
+.compScore {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 2rem;
+}
+
+.resultDisplay {
+    font-size: 2.5rem;
+    height: 4rem;
+    width: 40%;
+    background-color: rgba(16, 16, 80, 0.692);
+    margin: 3rem auto;
+    color: aliceblue;
+    line-height: 4rem;
+    border-radius: 20px;
+    padding: 0 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.greenText,
+.userscore {
+    color: rgb(72, 184, 72);
+}
+
+.redText,
+.compscore {
+    color: rgb(219, 17, 17);
+}
+
+.blueText {
+    color: white;
+}
+
+/* --- MOBILE SPECIFIC STYLES (Starts from 768px and down) --- */
+@media (max-width: 768px) {
+    body {
+        height: 100vh;
+        overflow: hidden;
+        justify-content: space-around;
+        padding: 1.5vh 0;
+    }
+
+    h1 {
+        font-size: 5.5vw;
+        height: auto;
+        line-height: 1.3;
+        padding: 1.5vh 2vw;
+        margin-bottom: 2vh;
+    }
+
+    .choices {
+        flex-direction: row;
+        gap: 3vw;
+        margin-top: 2vh;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-grow: 1;
+        align-items: center;
+    }
+
+    img {
+        height: 17vh;
+        width: 17vh;
+        min-height: 75px;
+        min-width: 75px;
+        transition: transform 0.08s ease-out, border-color 0.08s ease-out;
+        transform: translateZ(0);
+    }
+
+    img:active {
+        transform: scale(1.05);
+        border-color: blue;
+    }
+
+
+    #playerDisplay,
+    #computerDisplay {
+        font-size: 4vw;
+        margin-top: 2vh;
+        padding: 0 3vw;
+    }
+
+    .scores {
+        flex-direction: row;
+        gap: 12vw;
+        margin-top: 2vh;
+        flex-grow: 1;
+        align-items: flex-end;
+    }
+
+    .userscore,
+    .compscore {
+        font-size: 8vw;
+    }
+
+    .userScore,
+    .compScore {
+        gap: 1vh;
+        font-size: 4.5vw;
+    }
+
+    .resultDisplay {
+        font-size: 5vw;
+        height: 10vh;
+        width: 90vw;
+        line-height: 10vh;
+        margin: 2vh auto;
+        padding: 0 4vw;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+    }
+}
+
+/* Further adjustments for very small phone screens (<= 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 6vw;
+        padding: 1.5vh 2vw;
+    }
+
+    .choices {
+        gap: 2vw;
+        margin-top: 1.5vh;
+    }
+
+    img {
+        height: 15vh;
+        width: 15vh;
+        min-height: 60px;
+        min-width: 60px;
+    }
+
+    #playerDisplay,
+    #computerDisplay {
+        font-size: 4.5vw;
+        margin-top: 1.5vh;
+    }
+
+    .scores {
+        gap: 15vw;
+        margin-top: 1.5vh;
+    }
+
+    .userscore,
+    .compscore {
+        font-size: 9vw;
+    }
+
+    .userScore,
+    .compScore {
+        font-size: 5vw;
+    }
+
+    .resultDisplay {
+        font-size: 6vw;
+        height: 11vh;
+        width: 95vw;
+        line-height: 11vh;
+        margin: 1.5vh auto;
+        margin-bottom: 4rem;
+    }
+}
